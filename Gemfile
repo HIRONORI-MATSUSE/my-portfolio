@@ -36,6 +36,7 @@ gem 'mimemagic', '0.3.7'
 gem 'chart-js-rails', '~> 0.1.4'
 gem "gon"
 gem 'activerecord-import'
+gem "aws-sdk-s3", require: false
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
