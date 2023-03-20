@@ -1,0 +1,116 @@
+<% console %>
+<div class="container">
+  <div row>
+    <div class="col-lg-9 mx-auto text-center">
+      <div class="card">
+        <div class="card-body">
+          <div class="container">
+            <div class="row">
+                <div class="col-3">
+                    <div>
+                        <h3>バックエンド</h3>
+                    </div>
+                </div>
+                <div class="col-3 ms-auto">
+                    <div class="row ms-auto">
+                        <%= link_to "スキルを追加する", "/skills/new/backend", class: "skill-add-btn", id: "add" %>
+                    </div>            
+                </div>
+            </div>
+            <div class="row">  
+              <table class="table-light">
+                <tr>
+                    <th>習得スキル</th>
+                    <th>習得レベル</th>
+                    <th></th><th></th>
+                </tr>
+                <% @back.skills.each do |skill| %>
+                <tr>
+                    <td><%= skill.name %></td>
+                    <td><%= skill.proficiency_level %></td>
+                    <td><%= link_to "習得レベルを保存する", skill_path(skill.id), method: :patch, params: { proficiency_level: ""}, class: "btn btn-outline-primary"  %></td>
+                    <td><%= link_to "スキルを削除する", skill, method: :delete, class: "skill-del-btn", id: "del" %></td>
+                </tr>
+                <% end %>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-body">
+          <div class="container">
+            <div class="row">
+                <div class="col-3">
+                    <div>
+                        <h3>フロントエンド</h3>
+                    </div>
+                </div>
+                <div class="col-3 ms-auto">
+                    <div class="row ms-auto">
+                        <%= link_to "スキルを追加する", "/skills/new/frontend", class: "skill-add-btn", id: "add" %>
+                    </div>            
+                </div>
+            </div>
+            <div class="row">  
+              <table class="table-light">
+                <tr>
+                    <th>習得スキル</th>
+                    <th>習得レベル</th>
+                    <th></th><th></th>
+                </tr>
+                <% @front.skills.each do |skill| %>
+                <tr>
+                    <td><%= skill.name %></td>
+                    <td><%= skill.proficiency_level %></td>
+                    <td><%= link_to "習得レベルを保存する", skill_path(skill.id), method: :patch, params: { proficiency_level: ""}, class: "btn btn-outline-primary"  %></td>
+                    <td><%= link_to "スキルを削除する", skill_path(skill.id), method: :delete, class: "skill-del-btn", id: "del" %></td>
+                </tr>
+                <% end  %>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-body">
+          <div class="container">
+            <div class="row">
+              <div class="col-3">
+                  <div>
+                      <h3>インフラ</h3>
+                  </div>
+              </div>
+              <div class="col-3 ms-auto">
+                  <div class="row ms-auto">
+                      <%= link_to "スキルを追加する", "/skills/new/infra", class: "skill-add-btn", id: "add" %>
+                  </div>            
+              </div>
+            </div>
+            <div class="row">  
+              <table class="table-light">
+                <tr>
+                    <th>習得スキル</th>
+                    <th>習得レベル</th>
+                    <th></th><th></th>
+                </tr>
+                <% @infra.skills.each do |skill| %>
+                  <tr>
+                      <td><%= skill.name %></td>
+                      <td><%= skill.proficiency_level %></td>
+                      <td><%= link_to "習得レベルを保存する", skill_path(skill.id), method: :patch, params: { proficiency_level: ""}, class: "btn btn-outline-primary"  %></td>
+                      <td><%= link_to "スキルを削除する", skill_path(skill.id), method: :delete, class: "skill-del-btn", id: "del" %></td>
+                  </tr>
+                <% end  %>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+      </div>
+    </div>  
+  </div>
+</div>
+
+<%= javascript_pack_tag 'modal' %>
+

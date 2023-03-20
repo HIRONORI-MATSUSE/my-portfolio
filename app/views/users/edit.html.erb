@@ -1,0 +1,28 @@
+<div class="container">
+  <div class="row">
+    <div class="col-lg-4 mx-auto text-center">
+      <h2>自己紹介を編集する</h2>
+    </div>
+  </div>
+
+  <%= form_with(model: @user, local: true) do |form| %>
+    <div class="row justify-content-center">
+      <div class="col-5 mx-auto">
+        <%= form.label :自己紹介文, class: "form-label" %>
+        <%= form.text_area :comment, class: "form-control" %>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-5 mx-auto">
+        <%= form.label :アバター画像, class: "form-label" %>
+        <%= form.file_field :image, class: "form-control" %>
+      </div>
+    </div>
+    <div class="row justify-content-center">
+      <div class="col-3 mx-auto">
+        <%= form.submit "自己紹介を確定する", class: "form-button" %>
+      </div>
+    </div>
+  <% end %>
+</div>
+

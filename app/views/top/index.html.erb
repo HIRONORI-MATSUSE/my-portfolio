@@ -1,3 +1,81 @@
-<h1>Top#index</h1>
-<p>Find me in app/views/top/index.html.erb</p>
-
+<div class="container">
+    <div class="row justify-content-center ">
+        <div class="col-lg-3">
+            <div class="top-page-image justify-content-center">
+                <% if current_user %>
+                    <% if @user.image.attached? %>
+                        <%= image_tag @user.image, class: "rounded-circle" %>
+                    <% else %>
+                        <%= image_tag "moc.png", class: "rounded-circle" %>
+                    <% end %>    
+                <% else %>
+                    <%= image_tag "moc.png", class: "rounded-circle" %>
+                <% end %>
+            </div>
+        </div>
+        <div class="col-lg-4">
+            <div class="row text-center">
+                <h2>自己紹介</h2>
+            </div>
+            <div class="row">
+                <% if current_user %>
+                    <div class="row text-center profile-comment">
+                        <%= @user.comment  %>
+                    </div>
+                    <div class="row text-center">
+                        <%= button_to "自己紹介を編集する", edit_user_path(current_user.id), method: :get, class: "top-page-btn" %>
+                    </div>
+                <% else %>
+                    <p class="no-login">ログインして、自己紹介文と画像を登録しましょう！</p>
+                <% end %>
+            </div>
+        </div>
+    </div>
+    <div class="row justify-content-center text-center">
+        <div class="col-lg-5 skill-chart">
+            <h2>スキルチャート</h2>
+        </div>
+    </div>
+    <div class="row justify-content-center text-center">
+        <div class="col-lg-5">
+            <% if current_user %>
+                <%= button_to "スキルを編集する", skills_path, method: :get, class: "top-page-btn" %>
+            <% end %>
+        </div>
+    </div>
+    <div class="row justify-content-center">
+        <div class="col-lg-9">
+            <canvas id="skillChart" width="100px" height="30px"></canvas>
+        </div>
+    </div>
+</div>
+<script>
+    var ctx = document.getElementById("skillChart");
+    var skillChart = new Chart(ctx, {
+    type: 'bar',
+    data: {
+        labels: ['バックエンド', 'フロントエンド', 'インフラ'],
+        datasets: [{
+        label: 'スキル１',
+        data: [25, 35, 90],
+        backgroundColor: '#f88',
+        }, {
+        label: 'スキル２',
+        data: [20, 10, 30],
+        backgroundColor: '#484',
+        }, {
+        label: 'スキル３',
+        data: [30, 20, 15],
+        backgroundColor: '#48f',
+        }]
+    },
+    options: {
+        scales: {
+        y: {
+            min: 0,
+            max: 100,
+        }
+        }
+    }
+    });
+</script> 

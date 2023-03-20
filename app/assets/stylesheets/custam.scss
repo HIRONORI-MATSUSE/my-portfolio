@@ -1,0 +1,152 @@
+// ヘッダー
+#logo {
+    float: left;
+    margin-right: 10px;
+    font-size: 1.7em;
+    color: #fff;
+    letter-spacing: -1px;
+    padding-top: 9px;
+    font-weight: bold;
+    line-height: 1;
+    text-decoration: none;
+}
+
+#logo:hover {
+    color: #fff;
+    text-decoration: none;
+}
+
+// フッター
+.footer-top {
+    color: #fff;
+    background-color: #007394;
+    padding-top: 10px;
+    text-align: center;
+}
+
+//　ベース
+.layout {
+    padding-top: 70px;
+}
+
+// トップページ
+.no-login {
+    color: red;
+}
+
+.top-page-image img {
+    margin-left: 20px;
+    width:12rem;
+    height:12rem;
+}
+
+.skill-chart {
+    padding-top: 50px;
+    padding-bottom: 10px;
+}
+
+.top-page-btn {
+    color:#fff;
+    background-color: #007394;
+    width: 200px;
+    height: 40px;
+    border-radius:10px
+    
+}
+
+
+// フォーム
+.form-label {
+    margin-top: 10px;
+}
+
+.form-button {
+    margin-top: 15px;
+    color:#fff;
+    background-color: #007394;
+    width: 300px;
+    height: 40px;
+    border-radius:10px
+}
+
+
+#modal-open,
+#modal-close {
+    width: 320px;
+    margin: 40px auto;
+    border: 1px solid blue;
+    padding: 10px;
+    text-align: center;
+    cursor: pointer;
+}
+
+#model-bg {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: rgba(0,0,0,0.6);
+    opacity: 0;
+    pointer-events: none;
+}
+
+#model-bg :active {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+#modal-container {
+    position: absolute;
+    top: 120px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #fff;
+    padding: 20px;
+    opacity: 0;
+    pointer-events: none;
+}
+
+#modal-container :active {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+#modal-close {
+    margin: 10px auto;
+}
+
+
+// スキルページ
+
+.card {
+    margin-bottom: 50px;
+}
+
+.skill-add-btn {
+    color: #fff;
+    background-color: #007394;
+    height: 35px;
+    border-radius: 5px;
+    text-decoration: none;
+    padding: 5px;
+}
+
+.skill-del-btn {
+    color: #fff;
+    background-color: red;
+    height: 100px;
+    border-radius: 5px;
+    text-decoration: none;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 50px;
+    padding-right: 50px;
+}
+
+#add:hover,
+#del:hover {
+    color: #fff;
+    text-decoration: none;
+}
+

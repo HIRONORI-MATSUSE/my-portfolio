@@ -1,0 +1,4 @@
+
+<%= form_with model:@infra, local: true do |s| %>
+  <%= s.number_field :proficiency_level, in: 0..100, class: "form-control" %>
+<% end %>
